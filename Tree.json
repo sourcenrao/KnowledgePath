@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "category" : "Formal Science",
+  "UID": 1,
+  "parents": [],
+  "children": [
+    
+  ],
+  "blurbs": [
+    "Its laws are absolutely certain and indisputable, while those of other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts. - Albert Einstein"
+  ]
+  },
+  { "category" : "Natural Science",
+  "UID": 2,
+  "parents": [],
+  "children": [
+    3
+  ],
+  "blurbs": [
+    "Nothing in natural science can be absolutely proven to be impossible because it can be refuted by a single newly observed counterexample."
+  ]
+  },
+  { "category" : "Social Science",
+  "UID": 3,
+  "parents": [],
+  "children": [
+    3
+  ],
+  "blurbs": [
+    "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology."
+  ]
+  },
+  { "category" : "Anthropology",
+  "UID": 4,
+  "parents": [2, 3],
+  "children": [
+  ],
+  "blurbs": [
+    "The humanities generally study local traditions through their history, literature, music, and arts, with an emphasis on understanding particular individuals, events, or eras. The quest for holism leads most anthropologists to study a people in detail, using biogenetic, archaeological, and linguistic data alongside direct observation of contemporary customs."
+  ]
+  }
+  ]
+}
