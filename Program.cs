@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json;
+using static KnowledgePath.Tree;
 
 namespace KnowledgePath
 {
@@ -7,7 +9,8 @@ namespace KnowledgePath
     {
         static void Main(string[] args)
         {
-            Tree.DeserializeTree(Tree.OpenTree());
+            string treeFileName = "Tree.json";
+            List<Subject> tree = Tree.OpenTree(treeFileName);
         }
     }
 }
