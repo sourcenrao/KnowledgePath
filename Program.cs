@@ -10,7 +10,9 @@ namespace KnowledgePath
         static void Main(string[] args)
         {
             string treeFileName = "Tree.json";
-            List<Subject> tree = Tree.OpenTree(treeFileName);
+            Root tree = Tree.OpenTree(treeFileName);
+            Console.WriteLine(tree);
+            Console.ReadKey();
         }
     }
 }
