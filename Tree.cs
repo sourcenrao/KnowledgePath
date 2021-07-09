@@ -41,7 +41,11 @@ namespace KnowledgePath
                 string treeDirectory = Directory.GetCurrentDirectory();
                 DirectoryInfo treeDirectoryInfo = new DirectoryInfo(treeDirectory);
                 string treeFilePath = Path.Combine(treeDirectoryInfo.FullName, treeFileName);
-                return JsonConvert.DeserializeObject<Root>(treeFilePath);
+                using (StreamReader treeFile = File.OpenText(treeFilePath))
+                {
+                    string treeString = treeFile.ReadToEnd();
+                    return JsonConvert.DeserializeObject<Root>(treeString);
+                }
             }
             catch (Exception)
             {

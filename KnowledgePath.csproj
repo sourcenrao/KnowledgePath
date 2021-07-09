@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="Tree.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </ApplicationDefinition>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <None Update="Tree.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
