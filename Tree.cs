@@ -20,6 +20,12 @@ namespace KnowledgePath
             public List<string> blurbs { get; set; }
         }
 
+        /* From selected subject's children and return the categories */
+        public static string[] Next3(int[])
+        {
+            
+        }
+
         public static JArray OpenTree(string treeFileName)
         {
             try
