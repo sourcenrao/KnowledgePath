@@ -6,34 +6,62 @@ using Newtonsoft.Json.Linq;
 
 namespace KnowledgePath
 {
-    public static class Tree
+    public class Tree
     {
+        public List<Subject> tree { get; set; }
 
-        public static List<int> GetNextSubjects(JArray tree, int parentUID)
+        public class Subject
         {
-            return tree[parentUID - 1]["children"].ToObject<List<int>>();
+            public string category { get; set; }
+            public int UID { get; set; }
+            public List<int> parents { get; set; }
+            public List<int> children { get; set; }
+            public string blurb { get; set; }
         }
 
-        public static List<JToken> GetBlurbsForSubjects(JArray tree, List<int> subjectArray)
+        public Tree(string treeFileName)
         {
-            List<JToken> blurbs = new List<JToken>();
+            try
+            {
+                string treeDirectory = Directory.GetCurrentDirectory();
+                DirectoryInfo treeDirectoryInfo = new DirectoryInfo(treeDirectory);
+                string treeFilePath = Path.Combine(treeDirectoryInfo.FullName, treeFileName);
+                using (StreamReader treeFile = File.OpenText(treeFilePath))
+                {
+                    string treeString = treeFile.ReadToEnd();
+                    tree = JArray.Parse(treeString).ToObject<List<Subject>>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public List<int> GetNextSubjects(int parentUID)
+        {
+            return tree[parentUID - 1].children;
+        }
+
+        public List<string> GetBlurbsForSubjects(List<int> subjectArray)
+        {
+            List<string> blurbs = new List<string>();
             foreach(int subjectID in subjectArray)
             {
-                blurbs.Add(tree[subjectID - 1]["blurb"]);
+                blurbs.Add(tree[subjectID - 1].blurb);
             }
             return blurbs;
         }
 
-        public static void PrintFromList(List<JToken> blurbs)
+        public void PrintFromList(List<string> blurbs)
         {
-            foreach(JToken blurb in blurbs)
+            foreach(string blurb in blurbs)
             {
                 Console.WriteLine(blurb);
                 Thread.Sleep(200);
             }
         }
 
-        public static JArray OpenTree(string treeFileName)
+        public JArray OpenTree(string treeFileName)
         {
             try
             {

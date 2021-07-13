@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using static KnowledgePath.Tree;
 
 namespace KnowledgePath
 {
@@ -11,11 +8,11 @@ namespace KnowledgePath
         static void Main(string[] args)
         {
             string treeFileName = "Tree.json";
-            JArray tree = OpenTree(treeFileName);
+            Tree tree = new Tree(treeFileName);
             
-            Console.WriteLine(tree[0]["blurb"]);
-            Console.WriteLine(GetNextSubjects(tree, 1));
-            PrintFromList(GetBlurbsForSubjects(tree, GetNextSubjects(tree, 1)));
+            Console.WriteLine(tree.tree[0].blurb);
+            Console.WriteLine(tree.GetNextSubjects(1));
+            tree.PrintFromList(tree.GetBlurbsForSubjects(tree.GetNextSubjects(1)));
             Console.ReadKey();
         }
     }
