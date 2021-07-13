@@ -13,6 +13,6 @@ namespace KnowledgePath
         public int UID { get; set; }
         public List<int> parents { get; set; }
         public List<int> children { get; set; }
-        public List<string> blurbs { get; set; }
+        public string blurb { get; set; }
     }
 }

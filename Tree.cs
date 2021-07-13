@@ -9,17 +9,17 @@ namespace KnowledgePath
     public static class Tree
     {
 
-        public static JToken GetNextSubjects(JArray tree, int parentUID)
+        public static List<int> GetNextSubjects(JArray tree, int parentUID)
         {
-            return tree[parentUID]["children"];
+            return tree[parentUID - 1]["children"].ToObject<List<int>>();
         }
 
-        public static List<JToken> GetBlurbsForSubjects(JArray tree, JToken subjectArray)
+        public static List<JToken> GetBlurbsForSubjects(JArray tree, List<int> subjectArray)
         {
             List<JToken> blurbs = new List<JToken>();
             foreach(int subjectID in subjectArray)
             {
-                blurbs.Add(tree[subjectID - 1]["blurbs"]);
+                blurbs.Add(tree[subjectID - 1]["blurb"]);
             }
             return blurbs;
         }
