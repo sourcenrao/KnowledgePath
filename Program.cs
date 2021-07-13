@@ -11,9 +11,11 @@ namespace KnowledgePath
         static void Main(string[] args)
         {
             string treeFileName = "Tree.json";
-            JArray tree = Tree.OpenTree(treeFileName);
+            JArray tree = OpenTree(treeFileName);
             
             Console.WriteLine(tree[0]["blurbs"][0]);
+            Console.WriteLine(GetNextSubjects(tree, 0));
+            PrintFromList(GetBlurbsForSubjects(tree, GetNextSubjects(tree, 0)));
             Console.ReadKey();
         }
     }

@@ -3,9 +3,7 @@
         "category": "Formal Science",
         "UID": 1,
         "parents": [],
-        "children": [
-
-        ],
+        "children": [4,5,6,7,8,9],
         "blurbs": [
             "Its laws are absolutely certain and indisputable, while those of other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts. - Albert Einstein"
         ]
@@ -14,9 +12,7 @@
         "category": "Natural Science",
         "UID": 2,
         "parents": [],
-        "children": [
-            3
-        ],
+        "children": [10,11,12,13,14,15],
         "blurbs": [
             "Nothing in natural science can be absolutely proven to be impossible because it can be refuted by a single newly observed counterexample."
         ]
@@ -25,21 +21,194 @@
         "category": "Social Science",
         "UID": 3,
         "parents": [],
-        "children": [
-            3
-        ],
+        "children": [16,17,18,19,20,21,22,23,24,25,26],
         "blurbs": [
             "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology."
         ]
     },
     {
-        "category": "Anthropology",
+        "category": "Logic",
         "UID": 4,
-        "parents": [ 2, 3 ],
-        "children": [
-        ],
-        "blurbs": [
-            "The humanities generally study local traditions through their history, literature, music, and arts, with an emphasis on understanding particular individuals, events, or eras. The quest for holism leads most anthropologists to study a people in detail, using biogenetic, archaeological, and linguistic data alongside direct observation of contemporary customs."
-        ]
+        "parents": [1],
+        "children": [27,28,29,30],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Mathematics",
+        "UID": 5,
+        "parents": [1],
+        "children": [31,32,33,34,35],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Statistics",
+        "UID": 6,
+        "parents": [1],
+        "children": [36,37,38,39],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Systems Theory",
+        "UID": 7,
+        "parents": [1],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Decision Theory",
+        "UID": 8,
+        "parents": [1],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Theoretical Computer Science",
+        "UID": 9,
+        "parents": [1],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+
+,
+    {
+        "category": "Biology",
+        "UID": 10,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Earth Science",
+        "UID": 11,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Chemistry",
+        "UID": 12,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Physics",
+        "UID": 13,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Astronomy",
+        "UID": 14,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Materials Science",
+        "UID": 15,
+        "parents": [2],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+
+,
+    {
+        "category": "Anthropology",
+        "UID": 16,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Communication",
+        "UID": 17,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Economics",
+        "UID": 18,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Education",
+        "UID": 19,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Geography",
+        "UID": 20,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "History",
+        "UID": 21,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Law",
+        "UID": 22,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Linguistics",
+        "UID": 23,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Political Science",
+        "UID": 24,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Psychology",
+        "UID": 25,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
+    }
+,
+    {
+        "category": "Sociology",
+        "UID": 26,
+        "parents": [3],
+        "children": [ ],
+        "blurbs": [ ]
     }
 ]

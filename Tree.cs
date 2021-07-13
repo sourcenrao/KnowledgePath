@@ -1,29 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 
 namespace KnowledgePath
 {
-    public class Tree {
+    public static class Tree
+    {
 
-        public class Subject
+        public static JToken GetNextSubjects(JArray tree, int parentUID)
         {
-            public string category { get; set; }
-            public int UID { get; set; }
-            public List<int> parents { get; set; }
-            public List<int> children { get; set; }
-            public List<string> blurbs { get; set; }
+            return tree[parentUID]["children"];
         }
 
-        /* From selected subject's children and return the categories */
-        public static string[] Next3(int[])
+        public static List<JToken> GetBlurbsForSubjects(JArray tree, JToken subjectArray)
         {
-            
+            List<JToken> blurbs = new List<JToken>();
+            foreach(int subjectID in subjectArray)
+            {
+                blurbs.Add(tree[subjectID - 1]["blurbs"]);
+            }
+            return blurbs;
+        }
+
+        public static void PrintFromList(List<JToken> blurbs)
+        {
+            foreach(JToken blurb in blurbs)
+            {
+                Console.WriteLine(blurb);
+                Thread.Sleep(200);
+            }
         }
 
         public static JArray OpenTree(string treeFileName)
