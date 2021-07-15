@@ -1,203 +1,186 @@
 [
     {
+        "category": "Root of Knowledge",
+        "UID": 0,
+        "parents": [],
+        "children": [ 1, 2, 3 ],
+        "blurb": "This is the beginning."
+    },
+    {
         "category": "Formal Science",
         "UID": 1,
         "parents": [],
-        "children": [4,5,6,7,8,9],
+        "children": [ 4, 5, 6, 7, 8, 9 ],
         "blurb": "Its laws are absolutely certain and indisputable, while those of other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts. - Albert Einstein"
     },
     {
         "category": "Natural Science",
         "UID": 2,
         "parents": [],
-        "children": [10,11,12,13,14,15],
+        "children": [ 10, 11, 12, 13, 14, 15 ],
         "blurb": "Nothing in natural science can be absolutely proven to be impossible because it can be refuted by a single newly observed counterexample."
     },
     {
         "category": "Social Science",
         "UID": 3,
         "parents": [],
-        "children": [16,17,18,19,20,21,22,23,24,25,26],
+        "children": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
         "blurb": "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology."
     },
     {
         "category": "Logic",
         "UID": 4,
-        "parents": [1],
-        "children": [27,28,29,30],
+        "parents": [ 1 ],
+        "children": [ 27, 28, 29, 30 ],
         "blurb": "Upon this first, and in one sense this sole, rule of reason, that in order to learn you must desire to learn, and in so desiring not be satisfied with what you already incline to capably think, there follows one corollary which itself deserves to be inscribed upon every wall of the city of philosophy: Do not block the way of inquiry.  - Charles Sanders Peirce, First Rule of Logic"
-    }
-,
+    },
     {
         "category": "Mathematics",
         "UID": 5,
-        "parents": [1],
-        "children": [31,32,33,34,35],
+        "parents": [ 1 ],
+        "children": [ 31, 32, 33, 34, 35 ],
         "blurb": "Test5"
-    }
-,
+    },
     {
         "category": "Statistics",
         "UID": 6,
-        "parents": [1],
-        "children": [36,37,38,39],
+        "parents": [ 1 ],
+        "children": [ 36, 37, 38, 39 ],
         "blurb": "Test6"
-    }
-,
+    },
     {
         "category": "Systems Theory",
         "UID": 7,
-        "parents": [1],
-        "children": [ ],
+        "parents": [ 1 ],
+        "children": [],
         "blurb": "Test7"
-    }
-,
+    },
     {
         "category": "Decision Theory",
         "UID": 8,
-        "parents": [1],
-        "children": [ ],
+        "parents": [ 1 ],
+        "children": [],
         "blurb": "Test8"
-    }
-,
+    },
     {
         "category": "Theoretical Computer Science",
         "UID": 9,
-        "parents": [1],
-        "children": [ ],
+        "parents": [ 1 ],
+        "children": [],
         "blurb": "Test9"
-    }
-
-,
+    },
     {
         "category": "Biology",
         "UID": 10,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test10"
-    }
-,
+    },
     {
         "category": "Earth Science",
         "UID": 11,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test11"
-    }
-,
+    },
     {
         "category": "Chemistry",
         "UID": 12,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test12"
-    }
-,
+    },
     {
         "category": "Physics",
         "UID": 13,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test13"
-    }
-,
+    },
     {
         "category": "Astronomy",
         "UID": 14,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test14"
-    }
-,
+    },
     {
         "category": "Materials Science",
         "UID": 15,
-        "parents": [2],
-        "children": [ ],
+        "parents": [ 2 ],
+        "children": [],
         "blurb": "Test15"
-    }
-
-,
+    },
     {
         "category": "Anthropology",
         "UID": 16,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test16"
-    }
-,
+    },
     {
         "category": "Communication",
         "UID": 17,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test17"
-    }
-,
+    },
     {
         "category": "Economics",
         "UID": 18,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test18"
-    }
-,
+    },
     {
         "category": "Education",
         "UID": 19,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test19"
-    }
-,
+    },
     {
         "category": "Geography",
         "UID": 20,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test20"
-    }
-,
+    },
     {
         "category": "History",
         "UID": 21,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test21"
-    }
-,
+    },
     {
         "category": "Law",
         "UID": 22,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test22"
-    }
-,
+    },
     {
         "category": "Linguistics",
         "UID": 23,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test23"
-    }
-,
+    },
     {
         "category": "Political Science",
         "UID": 24,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test24"
-    }
-,
+    },
     {
         "category": "Psychology",
         "UID": 25,
-        "parents": [3],
-        "children": [ ],
+        "parents": [ 3 ],
+        "children": [],
         "blurb": "Test25"
-    }
-,
+    },
     {
         "category": "Sociology",
         "UID": 26,
@@ -208,92 +191,92 @@
     {
         "category": "Philosophical Logic",
         "UID": 27,
-        "parents": [4],
-        "children": [ ],
+        "parents": [ 4 ],
+        "children": [],
         "blurb": "Test27"
     },
     {
         "category": "Informal Logic",
         "UID": 28,
-        "parents": [4],
-        "children": [ ],
+        "parents": [ 4 ],
+        "children": [],
         "blurb": "Test28"
-    },
+    },
     {
         "category": "Formal Logic",
         "UID": 29,
-        "parents": [4],
-        "children": [ ],
+        "parents": [ 4 ],
+        "children": [],
         "blurb": "Test29"
-    },
+    },
     {
         "category": "Mathematical Logic",
         "UID": 30,
-        "parents": [4],
-        "children": [ ],
+        "parents": [ 4 ],
+        "children": [],
         "blurb": "Test30"
-    },
+    },
     {
         "category": "Algebra",
         "UID": 31,
-        "parents": [5],
-        "children": [ ],
+        "parents": [ 5 ],
+        "children": [],
         "blurb": "Test31"
-    },
+    },
     {
         "category": "Analysis",
         "UID": 32,
-        "parents": [5],
-        "children": [ ],
+        "parents": [ 5 ],
+        "children": [],
         "blurb": "Test32"
-    },
+    },
     {
         "category": "Probability",
         "UID": 33,
-        "parents": [5],
-        "children": [ ],
+        "parents": [ 5 ],
+        "children": [],
         "blurb": "Test33"
-    },
+    },
     {
         "category": "Geomety",
         "UID": 34,
-        "parents": [5],
-        "children": [ ],
+        "parents": [ 5 ],
+        "children": [],
         "blurb": "Test34"
-    },
+    },
     {
         "category": "Applied Math",
         "UID": 35,
-        "parents": [5],
-        "children": [ ],
+        "parents": [ 5 ],
+        "children": [],
         "blurb": "Test35"
-    },
+    },
     {
         "category": "Computational Stats",
         "UID": 36,
-        "parents": [6],
-        "children": [ ],
+        "parents": [ 6 ],
+        "children": [],
         "blurb": "Test36"
-    },
+    },
     {
         "category": "Experimental Design",
         "UID": 37,
-        "parents": [6],
-        "children": [ ],
+        "parents": [ 6 ],
+        "children": [],
         "blurb": "Test37"
-    },
+    },
     {
         "category": "Statistical Modelling",
         "UID": 38,
-        "parents": [6],
-        "children": [ ],
+        "parents": [ 6 ],
+        "children": [],
         "blurb": "Test38"
-    },
+    },
     {
         "category": "Statistical Theory",
         "UID": 39,
-        "parents": [6],
-        "children": [ ],
+        "parents": [ 6 ],
+        "children": [],
         "blurb": "Test39"
     }
 ]

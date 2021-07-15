@@ -10,7 +10,7 @@ namespace KnowledgePath
     {
         public List<Subject> tree { get; set; }
 
-        public class Subject
+        public record Subject
         {
             public string category { get; set; }
             public int UID { get; set; }
@@ -39,7 +39,7 @@ namespace KnowledgePath
         }
         public List<int> GetNextSubjects(int parentUID)
         {
-            return tree[parentUID - 1].children;
+            return tree[parentUID].children;
         }
 
         public List<string> GetBlurbsForSubjects(List<int> subjectArray)
@@ -47,36 +47,42 @@ namespace KnowledgePath
             List<string> blurbs = new List<string>();
             foreach(int subjectID in subjectArray)
             {
-                blurbs.Add(tree[subjectID - 1].blurb);
+                blurbs.Add(tree[subjectID].blurb);
             }
             return blurbs;
         }
 
-        public void PrintFromList(List<string> blurbs)
+        public void PrintFromList(List<string> blurbs, int tabSize = 4, int startingCount = 1)
         {
             foreach(string blurb in blurbs)
             {
-                Console.WriteLine(blurb);
-                Thread.Sleep(200);
-            }
-        }
+                string[] lines = blurb
+                    .Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
-        public JArray OpenTree(string treeFileName)
-        {
-            try
-            {
-                string treeDirectory = Directory.GetCurrentDirectory();
-                DirectoryInfo treeDirectoryInfo = new DirectoryInfo(treeDirectory);
-                string treeFilePath = Path.Combine(treeDirectoryInfo.FullName, treeFileName);
-                using (StreamReader treeFile = File.OpenText(treeFilePath))
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    string treeString = treeFile.ReadToEnd();
-                    return JArray.Parse(treeString);
+                    string process = lines[i];
+                    List<string> wrapped = new List<string>();
+
+                    while (process.Length > Console.WindowWidth)
+                    {
+                        int wrapAt = process.LastIndexOf(' ', Math.Min(Console.WindowWidth - 1, process.Length));
+                        if (wrapAt <= 0) break;
+
+                        wrapped.Add(process.Substring(0, wrapAt));
+                        process = process.Remove(0, wrapAt + 1);
+                    }
+
+                    Console.Write(startingCount + ": ");
+                    startingCount += 1;
+
+                    foreach (string wrap in wrapped)
+                    {
+                        Console.WriteLine(wrap);
+                    }
+
+                    Console.WriteLine(process + "\n");
                 }
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
     }
