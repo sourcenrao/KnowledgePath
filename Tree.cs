@@ -41,20 +41,23 @@ namespace KnowledgePath
         public List<int> GetUpTo3NextSubjects(int parentUID)
         {
             List<int> children = tree[parentUID].children;
-            HashSet<int> nextSubjects = new HashSet<int>(3);
             int length = children.Count;
-            Random rnd = new Random();
-
+            
             if (length > 0)
             {
+                HashSet<int> nextSubjects = new HashSet<int>(3);
+                Random rnd = new Random();
+
                 while (nextSubjects.Count < 3 && nextSubjects.Count < length)
                 {
                     int randomSubjectUID = children[rnd.Next(length)];
                     nextSubjects.Add(randomSubjectUID);
                 }
+
                 return nextSubjects.ToList();
             }
-            else return null;
+
+            return null;
         }
 
         public HashSet<string> GetBlurbsForSubjects(List<int> subjectArray)
@@ -63,7 +66,14 @@ namespace KnowledgePath
 
             foreach(int UID in subjectArray)
             {
-                blurbs.Add(tree[UID].blurb);
+                try
+                {
+                    blurbs.Add(tree[UID].blurb);
+                }
+                catch(Exception)
+                {
+                    throw;
+                }
             }
 
             return blurbs;

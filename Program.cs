@@ -24,7 +24,9 @@ namespace KnowledgePath
             {
                 List<int> nextSubjects = tree.GetUpTo3NextSubjects(currentNode);
 
-                if (nextSubjects == null)
+                Console.Clear();
+
+                if (nextSubjects is null)
                 {
                     Console.WriteLine("You have reached the end of the tree for now, though it still grows.");
                     Console.WriteLine("Your path:");
@@ -35,8 +37,6 @@ namespace KnowledgePath
                     Console.ReadKey();
                     Environment.Exit(0);
                 }
-
-                Console.Clear();
 
                 tree.PrintBlurbs(tree.GetBlurbsForSubjects(nextSubjects));
 
