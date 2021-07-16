@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 
@@ -37,22 +38,38 @@ namespace KnowledgePath
                 throw;
             }
         }
-        public List<int> GetNextSubjects(int parentUID)
+        public List<int> GetUpTo3NextSubjects(int parentUID)
         {
-            return tree[parentUID].children;
+            List<int> children = tree[parentUID].children;
+            HashSet<int> nextSubjects = new HashSet<int>(3);
+            int length = children.Count;
+            Random rnd = new Random();
+
+            if (length > 0)
+            {
+                while (nextSubjects.Count < 3 && nextSubjects.Count < length)
+                {
+                    int randomSubjectUID = children[rnd.Next(length)];
+                    nextSubjects.Add(randomSubjectUID);
+                }
+                return nextSubjects.ToList();
+            }
+            else return null;
         }
 
-        public List<string> GetBlurbsForSubjects(List<int> subjectArray)
+        public HashSet<string> GetBlurbsForSubjects(List<int> subjectArray)
         {
-            List<string> blurbs = new List<string>();
-            foreach(int subjectID in subjectArray)
+            HashSet<string> blurbs = new HashSet<string>();
+
+            foreach(int UID in subjectArray)
             {
-                blurbs.Add(tree[subjectID].blurb);
+                blurbs.Add(tree[UID].blurb);
             }
+
             return blurbs;
         }
 
-        public void PrintFromList(List<string> blurbs, int tabSize = 4, int startingCount = 1)
+        public void PrintBlurbs(HashSet<string> blurbs, int startingCount = 1)
         {
             foreach(string blurb in blurbs)
             {
