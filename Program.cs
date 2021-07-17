@@ -40,13 +40,6 @@ namespace KnowledgePath
 
                 tree.PrintBlurbs(tree.GetBlurbsForSubjects(nextSubjects));
 
-                /* 
-                > First node is 0
-                > PrintFromList 3 of selected node's children's blurbs
-                > Get user choice of nodes
-                > Restart using user's choice of nodes
-                */
-
                 input = InputParser.ReturnUserChoice(Console.ReadKey().KeyChar);
 
                 while (input == 4)
