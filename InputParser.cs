@@ -24,7 +24,7 @@ namespace KnowledgePath
                     return 4;
                 }
             }
-            else if (input == 'q')
+            else if (input == 'q' || input == 'Q')
             {
                 return 0;
             }
@@ -32,6 +32,18 @@ namespace KnowledgePath
             {
                 return 4;
             }
+        }
+
+        public static int CheckForRestart()
+        {
+            char input = Console.ReadKey().KeyChar;
+
+            if (input == 'r' || input == 'R')
+            {
+                return 5;
+            }
+
+            return 0;
         }
     }
 }
