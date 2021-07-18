@@ -15,7 +15,7 @@ namespace KnowledgePath
             Console.WriteLine("You can press 'q' at any time to quit.");
             Console.WriteLine("");
 
-            int input = InputParser.ReturnUserChoice(Console.ReadKey().KeyChar);
+            int input = InputParser.GetUserChoice();
             int currentNode = 0;
 
             List<string> treePath = new List<string>();
@@ -26,7 +26,7 @@ namespace KnowledgePath
 
                 Console.Clear();
 
-                if (nextSubjects is null)
+                if (nextSubjects.Count is 0)
                 {
                     Console.WriteLine("You have reached the end of the tree for now, though it still grows.");
                     Console.WriteLine("Your path:");
@@ -40,18 +40,18 @@ namespace KnowledgePath
 
                 tree.PrintBlurbs(tree.GetBlurbsForSubjects(nextSubjects));
 
-                input = InputParser.ReturnUserChoice(Console.ReadKey().KeyChar);
+                input = InputParser.GetUserChoice();
 
                 while (input == 4)
                 {
                     Console.WriteLine("Please enter 1-3 or press 'q' to quit.");
-                    input = InputParser.ReturnUserChoice(Console.ReadKey().KeyChar);
+                    input = InputParser.GetUserChoice();
                 }
 
                 if (input != 0)
                 {
                     currentNode = nextSubjects[input - 1];
-                    treePath.Add(tree.tree[currentNode].category);
+                    treePath.Add(tree.GetCategoryForSubject(currentNode));
                 }
 
             }

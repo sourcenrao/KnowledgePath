@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace KnowledgePath
 {
-    class InputParser
+    public class InputParser
     {
         /* Choices are 1-3, 'q' returns 0, other entries return 4*/
-        public static int ReturnUserChoice(char input)
+        public static int GetUserChoice()
         {
-            if(char.IsNumber(input))
+            char input = Console.ReadKey().KeyChar;
+            if (char.IsNumber(input))
             {
                 int value = (int)char.GetNumericValue(input);
                 if (value >= 1 && value <= 3)

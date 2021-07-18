@@ -9,7 +9,7 @@ namespace KnowledgePath
 {
     public class Tree
     {
-        public List<Subject> tree { get; set; }
+        private List<Subject> tree { get; set; }
 
         public record Subject
         {
@@ -38,9 +38,20 @@ namespace KnowledgePath
                 throw;
             }
         }
+
+        public string GetCategoryForSubject(int UID)
+        {
+            return tree[UID].category;
+        }
+
+        public List<int> GetChildrenForSubject(int UID)
+        {
+            return tree[UID].children;
+        }
+
         public List<int> GetUpTo3NextSubjects(int parentUID)
         {
-            List<int> children = tree[parentUID].children;
+            List<int> children = GetChildrenForSubject(parentUID);
             int length = children.Count;
             
             if (length > 0)
@@ -57,7 +68,7 @@ namespace KnowledgePath
                 return nextSubjects.ToList();
             }
 
-            return null;
+            return new List<int>(0);
         }
 
         public HashSet<string> GetBlurbsForSubjects(List<int> subjectArray)
