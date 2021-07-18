@@ -35,6 +35,7 @@ namespace KnowledgePath
                     {
                         currentNode = 0;
                         pathTracker = new(tree, currentNode);
+                        tree = new(treeFileName);
                     }
                 }
 
@@ -56,8 +57,8 @@ namespace KnowledgePath
                     if (input != 5)
                     {
                         currentNode = nextSubjects[input - 1];
+                        pathTracker.Add(tree, currentNode);
                     }
-                    pathTracker.Add(tree, currentNode);
                 }
 
             }

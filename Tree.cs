@@ -39,52 +39,59 @@ namespace KnowledgePath
             }
         }
 
+        private void CheckForRange(int UID)
+        {
+            if (UID > tree.Count - 1)
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
         public string GetCategoryForSubject(int UID)
         {
+            CheckForRange(UID);
             return tree[UID].category;
         }
 
         public List<int> GetChildrenForSubject(int UID)
         {
+            CheckForRange(UID);
             return tree[UID].children;
         }
 
         public List<int> GetUpTo3NextSubjects(int parentUID)
         {
+            CheckForRange(parentUID);
             List<int> children = GetChildrenForSubject(parentUID);
-            int length = children.Count;
             
-            if (length > 0)
+            if(children.Count > 0)
             {
-                HashSet<int> nextSubjects = new HashSet<int>(3);
-                Random rnd = new Random();
+                List<int> nextSubjects = new(0);
 
-                while (nextSubjects.Count < 3 && nextSubjects.Count < length)
+                Random rnd = new();
+
+                // Remove from list of possible subjects and add to list of next subjects
+                while (children.Count > 0 && nextSubjects.Count < 3)
                 {
-                    int randomSubjectUID = children[rnd.Next(length)];
-                    nextSubjects.Add(randomSubjectUID);
+                    int randomSubjectIndex = rnd.Next(children.Count);
+                    nextSubjects.Add(children[randomSubjectIndex]);
+                    children.RemoveAt(randomSubjectIndex);
                 }
 
-                return nextSubjects.ToList();
+                return nextSubjects;
             }
 
             return new List<int>(0);
+
         }
 
         public HashSet<string> GetBlurbsForSubjects(List<int> subjectArray)
         {
-            HashSet<string> blurbs = new HashSet<string>();
+            HashSet<string> blurbs = new();
 
             foreach(int UID in subjectArray)
             {
-                try
-                {
-                    blurbs.Add(tree[UID].blurb);
-                }
-                catch(Exception)
-                {
-                    throw;
-                }
+                CheckForRange(UID);
+                blurbs.Add(tree[UID].blurb);
             }
 
             return blurbs;
@@ -94,7 +101,9 @@ namespace KnowledgePath
         {
             foreach(string blurb in blurbs)
             {
-                string[] lines = blurb
+                string orderedBlurb = startingCount + ": " + blurb;
+                startingCount += 1;
+                string[] lines = orderedBlurb
                     .Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                 for (int i = 0; i < lines.Length; i++)
@@ -110,9 +119,6 @@ namespace KnowledgePath
                         wrapped.Add(process.Substring(0, wrapAt));
                         process = process.Remove(0, wrapAt + 1);
                     }
-
-                    Console.Write(startingCount + ": ");
-                    startingCount += 1;
 
                     foreach (string wrap in wrapped)
                     {
