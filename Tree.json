@@ -25,7 +25,7 @@
         "UID": 3,
         "parents": [],
         "children": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
-        "blurb": "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology."
+        "blurb": "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology.",
         "source":  "Wikipedia"
     },
     {
@@ -81,7 +81,7 @@
         "UID": 10,
         "parents": [ 2 ],
         "children": [],
-        "blurb": "The study of life can range from the molecular level to entire ecosystems."
+        "blurb": "The study of life can range from the molecular level to entire ecosystems.",
         "source":  "sourcenrao"
     },
     {
@@ -113,14 +113,16 @@
         "UID": 14,
         "parents": [ 2 ],
         "children": [],
-        "blurb": "Test14"
+        "blurb": "Improvements in digital technology have allowed amateurs to make impressive advances in the field of astrophotography, discovering comets and refining knowledge of planetary orbits.",
+        "source": "sourcenrao, Wikipedia"
     },
     {
         "category": "Materials Science",
         "UID": 15,
         "parents": [ 2 ],
         "children": [],
-        "blurb": "Test15"
+        "blurb": "Materials science covers the design and discovery of new materials, with applications such as cryogenic treatments, organic solar cells, and quantum semiconductors.",
+        "source": "sourcenrao, Wikipedia"
     },
     {
         "category": "Anthropology",
@@ -249,7 +251,7 @@
         "blurb": "Test33"
     },
     {
-        "category": "Geomety",
+        "category": "Geometry",
         "UID": 34,
         "parents": [ 5 ],
         "children": [],
