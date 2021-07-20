@@ -7,6 +7,8 @@ namespace KnowledgePath
     {
         static void Main()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             /* Load Tree from JSON */
             string treeFileName = "Tree.json";
             Tree tree = new(treeFileName);
