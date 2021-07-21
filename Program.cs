@@ -16,9 +16,12 @@ namespace KnowledgePath
             Console.WriteLine("Welcome to the Knowledge Path, press 1-3 to begin or to select an option.");
             Console.WriteLine("You can press 'q' at any time to quit.");
             Console.WriteLine("");
-
+            
             int input = InputParser.GetUserChoice();
             int currentNode = 0;
+
+            // Use separate bool to track restart
+            bool restart = false;
 
             PathTracker pathTracker = new(tree, currentNode);
 
@@ -37,7 +40,6 @@ namespace KnowledgePath
                     {
                         currentNode = 0;
                         pathTracker = new(tree, currentNode);
-                        tree = new(treeFileName);
                     }
                 }
 

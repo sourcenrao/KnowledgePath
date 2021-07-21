@@ -8,7 +8,7 @@ namespace KnowledgePath
 {
     public class InputParser
     {
-        /* Choices are 1-3, 'q' returns 0, other entries return 4*/
+        /* Choices are 1-3, 'q' returns 0, other entries return -1*/
         public static int GetUserChoice()
         {
             char input = Console.ReadKey().KeyChar;
@@ -21,7 +21,7 @@ namespace KnowledgePath
                 }
                 else
                 {
-                    return 4;
+                    return -1;
                 }
             }
             else if (input == 'q' || input == 'Q')
@@ -30,10 +30,11 @@ namespace KnowledgePath
             }
             else
             {
-                return 4;
+                return -1;
             }
         }
 
+        // Make restart check into a bool return
         public static int CheckForRestart()
         {
             char input = Console.ReadKey().KeyChar;

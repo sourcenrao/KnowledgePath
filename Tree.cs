@@ -13,49 +13,41 @@ namespace KnowledgePath
 
         public record Subject
         {
-            public string category { get; set; }
+            public string Category { get; set; }
             public int UID { get; set; }
-            public List<int> parents { get; set; }
-            public List<int> children { get; set; }
-            public string blurb { get; set; }
+            public List<int> Parents { get; set; }
+            public List<int> Children { get; set; }
+            public string Blurb { get; set; }
         }
 
         public Tree(string treeFileName)
         {
-            try
-            {
-                string treeDirectory = Directory.GetCurrentDirectory();
-                DirectoryInfo treeDirectoryInfo = new DirectoryInfo(treeDirectory);
-                string treeFilePath = Path.Combine(treeDirectoryInfo.FullName, treeFileName);
-                using (StreamReader treeFile = File.OpenText(treeFilePath))
-                {
-                    string treeString = treeFile.ReadToEnd();
-                    tree = JArray.Parse(treeString).ToObject<List<Subject>>();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            string treeDirectory = Directory.GetCurrentDirectory();
+            DirectoryInfo treeDirectoryInfo = new DirectoryInfo(treeDirectory);
+            string treeFilePath = Path.Combine(treeDirectoryInfo.FullName, treeFileName);
+            using StreamReader treeFile = File.OpenText(treeFilePath);
+            string treeString = treeFile.ReadToEnd();
+            tree = JArray.Parse(treeString).ToObject<List<Subject>>();
         }
 
         private void CheckForRange(int UID)
         {
-            if (UID > tree.Count - 1)
+            if (UID >= tree.Count)
             {
+                Console.WriteLine(UID + " out of range!");
                 throw new IndexOutOfRangeException();
             }
         }
         public string GetCategoryForSubject(int UID)
         {
             CheckForRange(UID);
-            return tree[UID].category;
+            return tree[UID].Category.ToString();
         }
 
         public List<int> GetChildrenForSubject(int UID)
         {
             CheckForRange(UID);
-            return tree[UID].children;
+            return tree[UID].Children.ToList();
         }
 
         public List<int> GetUpTo3NextSubjects(int parentUID)
@@ -65,7 +57,7 @@ namespace KnowledgePath
             
             if(children.Count > 0)
             {
-                List<int> nextSubjects = new(0);
+                List<int> nextSubjects = new(3);
 
                 Random rnd = new();
 
@@ -91,7 +83,7 @@ namespace KnowledgePath
             foreach(int UID in subjectArray)
             {
                 CheckForRange(UID);
-                blurbs.Add(tree[UID].blurb);
+                blurbs.Add(tree[UID].Blurb);
             }
 
             return blurbs;
