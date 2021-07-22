@@ -16,27 +16,27 @@ namespace KnowledgePath
             Console.WriteLine("Welcome to the Knowledge Path, press 1-3 to begin or to select an option.");
             Console.WriteLine("You can press 'q' at any time to quit.");
             Console.WriteLine("");
-            
-            int input = InputParser.GetUserChoice();
-            int currentNode = 0;
 
-            // Use separate bool to track restart
-            bool restart = false;
+            InputParser input = new();
+
+            int currentNode = 0;
 
             PathTracker pathTracker = new(tree, currentNode);
 
-            while (input != 0)
-            {
-                List<int> nextSubjects = tree.GetUpTo3NextSubjects(currentNode);
+            input.GetUserChoice();
 
+            while (!input.quit)
+            {
                 Console.Clear();
+
+                List<int> nextSubjects = tree.GetUpTo3NextSubjects(currentNode);
 
                 if (nextSubjects.Count is 0) // Runs if selected subject has no child nodes
                 {
                     pathTracker.PrintPath();
-                    input = InputParser.CheckForRestart(); // Returns 5 for restart, 0 for quit
+                    input.GetUserChoice();
 
-                    if (input == 5)
+                    if (input.restart)
                     {
                         currentNode = 0;
                         pathTracker = new(tree, currentNode);
@@ -46,25 +46,24 @@ namespace KnowledgePath
                 else // Runs if child nodes exist
                 {
                     tree.PrintBlurbs(tree.GetBlurbsForSubjects(nextSubjects));
+                    input.GetUserChoice();
 
-                    input = InputParser.GetUserChoice();
-
-                    while (input == 4)
+                    while (input.selection == InputParser.Selection.Invalid)
                     {
-                        Console.WriteLine("Please enter 1-3 or press 'q' to quit.");
-                        input = InputParser.GetUserChoice();
+                        Console.WriteLine("Please enter 1-3 or press 'q' to quit.\n");
+                        input.GetUserChoice();
                     }
                 }
 
-                if (input != 0)
+                if (!input.restart && !input.quit)
                 {
-                    if (input != 5)
-                    {
-                        currentNode = nextSubjects[input - 1];
-                        pathTracker.Add(tree, currentNode);
-                    }
+                    currentNode = nextSubjects[(int)input.selection - 1];
+                    pathTracker.Add(tree, currentNode);
                 }
-
+                else
+                {
+                    input.restart = false;
+                }
             }
 
             Environment.Exit(0);

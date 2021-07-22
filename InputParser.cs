@@ -8,8 +8,31 @@ namespace KnowledgePath
 {
     public class InputParser
     {
+        public enum Selection
+        {
+            Invalid = -1,
+            Quit = 0,
+            Subject1 = 1,
+            Subject2 = 2,
+            Subject3 = 3,
+            Restart = 9
+        }
+
+        public bool restart;
+
+        public bool quit;
+
+        public Selection selection;
+
+        public InputParser()
+        {
+            selection = Selection.Invalid;
+            restart = false;
+            quit = false;
+        }
+
         /* Choices are 1-3, 'q' returns 0, other entries return -1*/
-        public static int GetUserChoice()
+        public void GetUserChoice()
         {
             char input = Console.ReadKey().KeyChar;
             if (char.IsNumber(input))
@@ -17,34 +40,23 @@ namespace KnowledgePath
                 int value = (int)char.GetNumericValue(input);
                 if (value >= 1 && value <= 3)
                 {
-                    return value;
+                    selection = (Selection) value;
                 }
                 else
                 {
-                    return -1;
+                    selection = Selection.Invalid;
                 }
             }
             else if (input == 'q' || input == 'Q')
             {
-                return 0;
+                selection = Selection.Quit;
+                quit = true;
             }
-            else
+            else if (input == 'r' || input == 'R')
             {
-                return -1;
+                selection = Selection.Restart;
+                restart = true;
             }
-        }
-
-        // Make restart check into a bool return
-        public static int CheckForRestart()
-        {
-            char input = Console.ReadKey().KeyChar;
-
-            if (input == 'r' || input == 'R')
-            {
-                return 5;
-            }
-
-            return 0;
         }
     }
 }
