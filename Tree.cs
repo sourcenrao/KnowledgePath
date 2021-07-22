@@ -10,7 +10,7 @@ namespace KnowledgePath
     {
         private List<Subject> tree { get; set; }
 
-        public record Subject
+        private record Subject
         {
             public string Category { get; set; }
             public int UID { get; set; }
@@ -100,7 +100,7 @@ namespace KnowledgePath
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string process = lines[i];
-                    List<string> wrapped = new List<string>();
+                    List<string> wrapped = new();
 
                     while (process.Length > Console.WindowWidth)
                     {
