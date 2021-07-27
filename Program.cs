@@ -17,12 +17,12 @@ namespace KnowledgePath
             Console.WriteLine("You can press 'q' at any time to quit.");
             Console.WriteLine("");
 
+            // Initialize path tracker and input parser
+            int currentNode = 0;
+            PathTracker pathTracker = new(tree, currentNode);
             InputParser input = new();
 
-            int currentNode = 0;
-
-            PathTracker pathTracker = new(tree, currentNode);
-
+            // Get starting input
             input.GetUserChoice();
 
             while (!input.quit)
@@ -31,7 +31,7 @@ namespace KnowledgePath
 
                 List<int> nextSubjects = tree.GetUpTo3NextSubjects(currentNode);
 
-                if (nextSubjects.Count is 0) // Runs if selected subject has no child nodes
+                if (nextSubjects.Count is 0) // Runs if selected subject has no child nodes (i.e. path is complete)
                 {
                     pathTracker.PrintPath();
                     input.GetUserChoice();

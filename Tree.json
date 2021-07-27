@@ -4,21 +4,24 @@
         "UID": 0,
         "parents": [],
         "children": [ 1, 2, 3 ],
-        "blurb": "This is the beginning."
+        "blurb": "This is the beginning.",
+        "source":  "sourcenrao"
     },
     {
         "category": "Formal Science",
         "UID": 1,
         "parents": [],
         "children": [ 4, 5, 6, 7, 8, 9 ],
-        "blurb": "Formal science's laws are absolutely certain and indisputable, while those of other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts. - Albert Einstein"
+        "blurb": "Formal science's laws are absolutely certain and indisputable, while those of other sciences are to some extent debatable and in constant danger of being overthrown by newly discovered facts. - Albert Einstein",
+        "source": "Einstein: Geometry and Experience Lecture, translated (Jan 1921). Full lecture: https://mathshistory.st-andrews.ac.uk/Extras/Einstein_geometry/"
     },
     {
         "category": "Natural Science",
         "UID": 2,
         "parents": [],
-        "children": [ 10, 11, 12, 13, 14, 15 ],
-        "blurb": "Nothing in natural science can be absolutely proven to be impossible because it can be refuted by a single newly observed counterexample."
+        "children": [ 10, 11, 12, 13, 14, 15, 16 ],
+        "blurb": "Nothing in natural science can be absolutely proven to be impossible because it can be refuted by a single newly observed counterexample.",
+        "source": "https://en.wikipedia.org/wiki/Natural_science"
     },
     {
         "category": "Social Science",
@@ -26,7 +29,7 @@
         "parents": [],
         "children": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ],
         "blurb": "The foundation of social sciences in the West implies conditioned relationships between progressive and traditional spheres of knowledge. In some contexts, such as the Italian one, sociology slowly affirms itself and experiences the difficulty of affirming a strategic knowledge beyond philosophy and theology.",
-        "source":  "Wikipedia"
+        "source": "https://en.wikipedia.org/wiki/Social_science"
     },
     {
         "category": "Logic",
@@ -42,7 +45,7 @@
         "parents": [ 1 ],
         "children": [ 31, 32, 33, 34, 35 ],
         "blurb": "Logicists have attempted to prove all of mathematics can be defined and proved entirely in terms of symbolic logic. Intuitionists state it is the mental activity which consists in carrying out constructs one after the other. Formalist Haskell Curry defined it simply as 'the science of formal systems'.",
-        "source": "sourcenrao"
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Mathematics"
     },
     {
         "category": "Statistics",
@@ -50,7 +53,7 @@
         "parents": [ 1 ],
         "children": [ 36, 37, 38, 39 ],
         "blurb": "While many scientific investigations make use of data, statistics is concerned with the use of data in the context of uncertainty and decision making in the face of uncertainty.",
-        "source": "Wikipedia"
+        "source": "https://en.wikipedia.org/wiki/Systems_theory"
     },
     {
         "category": "Systems Theory",
@@ -66,7 +69,7 @@
         "parents": [ 1 ],
         "children": [],
         "blurb": "Kahneman and Tversky found three regularities in actual human decision-making; 'losses loom larger than gains'; persons focus more on changes in their utility-states than they focus on absolute utilities; and the estimation of subjective probabilities is severely biased by anchoring.",
-        "source": "Wikipedia"
+        "source": "https://en.wikipedia.org/wiki/Decision_theory"
     },
     {
         "category": "Theoretical Computer Science",
@@ -74,15 +77,15 @@
         "parents": [ 1 ],
         "children": [],
         "blurb": "Its aim is to understand the nature of computation and, as a consequence of this understanding, provide more efficient methodologies. Examples include quantum cryptography, molecular computing, and neural networks.",
-        "source": "Wikipedia, sourcenrao"
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Theoretical_computer_science"
     },
     {
         "category": "Biology",
         "UID": 10,
         "parents": [ 2 ],
         "children": [],
-        "blurb": "The study of life can range from the molecular level to entire ecosystems.",
-        "source":  "sourcenrao"
+        "blurb": "The study of life can range from the molecular level to humans to entire ecosystems.",
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Biology"
     },
     {
         "category": "Earth Science",
@@ -90,7 +93,7 @@
         "parents": [ 2 ],
         "children": [],
         "blurb": "Earth science encompasses four main branches of study: the lithosphere, the hydrosphere, the atmosphere, and the biosphere, each of which is further broken down into more specialized fields.",
-        "source": "Wikipedia"
+        "source": "https://en.wikipedia.org/wiki/Earth_science"
     },
     {
         "category": "Chemistry",
@@ -98,7 +101,7 @@
         "parents": [ 2 ],
         "children": [],
         "blurb": "Often called the central science, chemistry provides a foundation for understanding and applying both physics and biology.",
-        "source": "Wikipedia"
+        "source": "https://en.wikipedia.org/wiki/Chemistry"
     },
     {
         "category": "Physics",
@@ -106,7 +109,7 @@
         "parents": [ 2 ],
         "children": [],
         "blurb": "The main goal of physics is to understand how the universe behaves. Condensed matter physics aims to fabricate quantum computers, though some everyday phenomena such as intergalactic fast radio bursts are still poorly understood.",
-        "source": "sourcenrao, Wikipedia"
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Physics"
     },
     {
         "category": "Astronomy",
@@ -114,7 +117,7 @@
         "parents": [ 2 ],
         "children": [],
         "blurb": "Improvements in digital technology have allowed amateurs to make impressive advances in the field of astrophotography, discovering comets and refining knowledge of planetary orbits.",
-        "source": "sourcenrao, Wikipedia"
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Astronomy"
     },
     {
         "category": "Materials Science",
@@ -122,42 +125,47 @@
         "parents": [ 2 ],
         "children": [],
         "blurb": "Materials science covers the design and discovery of new materials, with applications such as cryogenic treatments, organic solar cells, and quantum semiconductors.",
-        "source": "sourcenrao, Wikipedia"
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Materials_science"
     },
     {
         "category": "Anthropology",
         "UID": 16,
-        "parents": [ 3 ],
+        "parents": [ 2, 3 ],
         "children": [],
-        "blurb": "Test16"
+        "blurb": "Until the 20th century, anthropological study was pursued by an amalgamation of social activist groups and societies under the name ethnology and largely excluded from higher education curriculum.",
+        "source": "sourcenrao, https://en.wikipedia.org/wiki/Anthropology"
     },
     {
         "category": "Communication",
         "UID": 17,
         "parents": [ 3 ],
         "children": [],
-        "blurb": "Test17"
+        "blurb": "Communication is 'an apparent answer to the painful divisions between self and other, private and public, and inner thought and outer word.'",
+        "source": "Peters, John Durham (1999) Speaking into the air : a history of the idea of communication (p. 2), https://en.wikipedia.org/wiki/Anthropology"
     },
     {
         "category": "Economics",
         "UID": 18,
         "parents": [ 3 ],
         "children": [],
-        "blurb": "Test18"
+        "blurb": "The real price of everything, what everything really costs to the man who wants to acquire it, is the toil and trouble of acquiring it. - Adam Smith",
+        "source": "Smith, Adam (1776) The Wealth of Nations"
     },
     {
         "category": "Education",
         "UID": 19,
         "parents": [ 3 ],
         "children": [],
-        "blurb": "Test19"
+        "blurb": "A World Bank study found that '53 percent of children in low- and middle-income countries cannot read and understand a simple story by the end of primary school.' While schooling has increased rapidly over the last few decades, learning has not followed suit.",
+        "source": "https://en.wikipedia.org/wiki/Education , https://www.worldbank.org/en/topic/education/brief/learning-poverty"
     },
     {
         "category": "Geography",
         "UID": 20,
         "parents": [ 3 ],
         "children": [],
-        "blurb": "Test20"
+        "blurb": "Just as all phenomena exist in time and thus have a history, they also exist in space and have a geography. - U.s. National Research Council, 1997",
+        "source": "https://en.wikipedia.org/wiki/Geography#cite_note-4"
     },
     {
         "category": "History",
@@ -206,7 +214,7 @@
         "UID": 27,
         "parents": [ 4 ],
         "children": [],
-        "blurb": "Test27"
+        "blurb": "The meaning of the world is the separation of wish and fact. Wish is a force as applied to thinking beings, to realize something. A fulfilled wish is a union of wish and fact. The meaning of the whole world is the separation and the union of fact and wish.  - Kurt Godel"
     },
     {
         "category": "Informal Logic",
