@@ -1,6 +1,6 @@
 Knowledge Path is an interactive subject pathfinder for the curious and unfocused mind to quickly hone in on an interesting topic.
 
-An alpha version [release](https://github.com/sourcenrao/KnowledgePath/releases) is available as a [zipped folder](https://github.com/sourcenrao/KnowledgePath/files/6902489/KnowledgePath-alpha02.zip) with an executable.
+An alpha version release is available as a [zipped folder](https://github.com/sourcenrao/KnowledgePath/releases/download/v0.2-alphaZIP/KPv0.2-alpha.zip) with an executable.
 
 Starting with selected quotes or facts from the three primary branches of science - Formal, Life, and Natural, selecting the one most interesting to you will narrow the focus of the program.
 Three more options are presented in based on the previous selection. Once a tree's endpoint has been reached, the subject tree path is shown to the user.
